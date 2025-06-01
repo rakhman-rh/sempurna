@@ -1,108 +1,148 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sempurna - Andra and The Backbone</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #dbeafe, #e0f2fe);
-      color: #111;
-      text-align: center;
+      background: linear-gradient(to bottom right, #1e1e2f, #3e3e5e);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 20px;
     }
+
     h1 {
-      font-size: 28px;
-      margin-top: 10px;
-    }
-    .description {
-      margin: 10px auto 20px;
-      font-size: 16px;
-      max-width: 600px;
-      color: #333;
-    }
-    audio {
       margin-top: 20px;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 10px;
+      font-size: 32px;
+      color: #ffdd57;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
-    #lyrics {
-      margin-top: 30px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+
+    p.description {
+      font-size: 16px;
+      color: #ccc;
+      margin-bottom: 30px;
+      max-width: 600px;
       text-align: center;
     }
-    .line {
-      margin: 5px 0;
-      font-size: 18px;
-      transition: color 0.3s, font-weight 0.3s;
+
+    audio {
+      width: 100%;
+      max-width: 500px;
+      margin: 20px 0;
     }
-    .active {
-      color: #1d4ed8;
-      font-weight: bold;
+
+    .lyrics {
       font-size: 20px;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      min-height: 150px;
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+
+    .icon {
+      font-size: 50px;
+      margin-top: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
     }
   </style>
 </head>
 <body>
 
-  <h1>🎵 Lirik Lagu: "Sempurna"</h1>
-  <div class="description">
-    Lagu populer dari <strong>Andra and The BackBone</strong>. Dengarkan dan rasakan liriknya muncul seiring alunan lagu 🎧
-  </div>
+  <h1>🎵 Sempurna</h1>
+  <p class="description">Sebuah pengalaman emosional: dengarkan lagu "Sempurna" dan rasakan setiap kalimat menyentuh jiwa Anda 💛</p>
 
   <audio id="audio" controls>
-    <source src="assets/audio/sempurna.mp3" type="audio/mp3" />
+    <source src="https://rakhman-rh.github.io/filosof-generator/assets/audio/lagu.mp3" type="audio/mp3">
     Browser Anda tidak mendukung pemutar audio.
   </audio>
 
-  <div id="lyrics"></div>
+  <div class="lyrics" id="lyrics"></div>
+
+  <div class="icon">💫</div>
 
   <script>
-    const lirik = [
-      { time: 0, text: "Kau begitu sempurna" },
-      { time: 5, text: "Di mataku kau begitu indah" },
-      { time: 10, text: "Kau membuat diriku" },
-      { time: 15, text: "Akan selalu memujamu" },
-      { time: 21, text: "Di setiap langkahku" },
-      { time: 26, text: "Ku kan selalu memikirkan dirimu" },
-      { time: 31, text: "Tak bisa ku bayangkan" },
-      { time: 36, text: "Hidupku tanpa cintamu" },
-      { time: 42, text: "Kau adalah yang terindah" },
-      { time: 47, text: "Yang membuat hatiku" },
-      { time: 52, text: "Menjadi lebih berarti" },
-      { time: 57, text: "Cinta yang kau beri" },
-      { time: 62, text: "Tak pernah ku ingkari" },
-      { time: 67, text: "Kau adalah yang terindah" }
+    const lyrics = [
+      [10, "Kau begitu sempurna"],
+      [14, "Di mataku kau begitu indah"],
+      [18, "Kau membuat diriku akan slalu memujamu"],
+      [23, "Di setiap langkahku"],
+      [26, "Ku kan slalu memikirkan dirimu"],
+      [30, "Tak bisa kubayangkan hidupku tanpa cintamu"],
+      [36, "Janganlah kau tinggalkan diriku"],
+      [41, "Takkan mampu menghadapi semua"],
+      [45, "Hanya bersamamu ku akan bisa"],
+      [50, "Kau adalah darahku"],
+      [54, "Kau adalah jantungku"],
+      [57, "Kau adalah hidupku"],
+      [60, "Lengkapi diriku"],
+      [63, "Oh sayangku kau begitu"],
+      [66, "Sempurna Sempurna"],
+      [70, "Kau genggam tanganku"],
+      [74, "Saat diriku lemah dan terjatuh"],
+      [78, "Kau bisikkan kata dan hapus semua sesalku"],
+      [83, "Janganlah kau tinggalkan diriku"],
+      [88, "Takkan mampu menghadapi semua"],
+      [92, "Hanya bersamamu ku akan bisa"],
+      [96, "Kau adalah darahku"],
+      [99, "Kau adalah jantungku"],
+      [102, "Kau adalah hidupku"],
+      [105, "Lengkapi diriku"],
+      [108, "Oh sayangku kau begitu"],
+      [111, "Sempurna Sempurna"],
+      [115, "Janganlah kau tinggalkan diriku"],
+      [119, "Takkan mampu menghadapi semua"],
+      [122, "Hanya bersamamu ku akan bisa"],
+      [126, "Kau adalah darahku (darahku)"],
+      [130, "Kau adalah jantungku (jantungku)"],
+      [134, "Kau adalah hidupku"],
+      [137, "Lengkapi diriku"],
+      [140, "Oh sayangku kau begitu"],
+      [144, "Sayang ku kau begitu"],
+      [147, "Sempurna Sempurna"]
     ];
 
-    const lyricsContainer = document.getElementById('lyrics');
     const audio = document.getElementById('audio');
+    const lyricsContainer = document.getElementById('lyrics');
+    let currentLine = 0;
 
-    lirik.forEach((line, i) => {
-      const div = document.createElement('div');
-      div.id = 'line-' + i;
-      div.className = 'line';
-      div.textContent = line.text;
-      lyricsContainer.appendChild(div);
+    audio.addEventListener('timeupdate', () => {
+      const time = Math.floor(audio.currentTime);
+
+      if (currentLine < lyrics.length && time >= lyrics[currentLine][0]) {
+        const line = document.createElement('div');
+        line.className = 'fade-in';
+        line.textContent = lyrics[currentLine][1];
+        lyricsContainer.appendChild(line);
+        currentLine++;
+      }
     });
-
-    audio.ontimeupdate = () => {
-      const currentTime = audio.currentTime;
-      lirik.forEach((line, i) => {
-        const el = document.getElementById('line-' + i);
-        const nextTime = lirik[i + 1] ? lirik[i + 1].time : Number.MAX_VALUE;
-        if (currentTime >= line.time && currentTime < nextTime) {
-          el.classList.add('active');
-        } else {
-          el.classList.remove('active');
-        }
-      });
-    };
   </script>
+
 </body>
 </html>
